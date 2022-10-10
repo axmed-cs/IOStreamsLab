@@ -45,11 +45,11 @@ public class IOLab
         try {
             URL link = new URL(s);
 
-            Scanner download = new Scanner(link.openStream());
-            String getInput = download.nextLine();
-            int dateTime = getInput.indexOf("datetime");
+            Scanner scan = new Scanner(link.openStream());
+            String info = scan.nextLine();
+            int dateTime = info.indexOf("datetime");
 
-            return getInput.substring(dateTime+11 , dateTime+43);
+            return info.substring(dateTime+11 , dateTime+43);
         }
 
         catch (MalformedURLException e) {
